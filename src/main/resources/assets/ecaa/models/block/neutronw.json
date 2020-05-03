@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "ecaa:blocks/neutron",
+    "down": "ecaa:blocks/neutron",
+    "up": "ecaa:blocks/neutron",
+    "east": "ecaa:blocks/neutron",
+    "west": "ecaa:blocks/neutron_front",
+    "north": "ecaa:blocks/neutron",
+    "south": "ecaa:blocks/neutron"
+  }
+}

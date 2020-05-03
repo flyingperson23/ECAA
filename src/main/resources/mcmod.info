@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ecaa",
+  "name": "Ex Cinere Adscendere Addons",
+  "description": "A custom mod for my modpack.",
+  "version": "1.0.2",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["FlyingPerson"],
+  "credits": "FlyingPerson",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

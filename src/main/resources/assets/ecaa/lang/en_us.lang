@@ -1,0 +1,16 @@
+tile.acceleratort1.name=World Accelerator Tier 1
+tile.acceleratort2.name=World Accelerator Tier 2
+tile.acceleratort3.name=World Accelerator Tier 3
+tile.acceleratort4.name=World Accelerator Tier 4
+tile.acceleratort5.name=World Accelerator Tier 5
+tile.charger.name=Advanced Wireless Charger
+
+gui.ecaa.category=UUM Assembler
+
+tile.gravityt1.name=Artificial Gravity Module Tier 1
+tile.gravityt2.name=Artificial Gravity Module Tier 2
+tile.gravityt3.name=Artificial Gravity Module Tier 3
+tile.gravityt4.name=Artificial Gravity Module Tier 4
+tile.gravityt5.name=Artificial Gravity Module Tier 5
+
+tile.neutron.name=Neutron absorber

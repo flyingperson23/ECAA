@@ -1,0 +1,15 @@
+{
+
+    "variants": {
+
+        "facing=east": { "model": "ecaa:neutronw"},
+
+        "facing=north": { "model": "ecaa:neutrons" },
+
+        "facing=south": { "model": "ecaa:neutronn"},
+
+        "facing=west": { "model": "ecaa:neutrone"}
+
+    }
+
+}

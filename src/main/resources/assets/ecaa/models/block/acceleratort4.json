@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"particle": "ecaa:blocks/acceleratort4",
+        "down":  "ecaa:blocks/accelerator_top",
+        "up":  "ecaa:blocks/accelerator_top",
+        "east":  "ecaa:blocks/acceleratort4",
+        "west":  "ecaa:blocks/acceleratort4",
+        "north": "ecaa:blocks/acceleratort4",
+        "south":  "ecaa:blocks/acceleratort4"
+	}
+}

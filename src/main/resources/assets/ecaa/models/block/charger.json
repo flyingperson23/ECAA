@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"particle": "ecaa:blocks/charger",
+        "down":  "ecaa:blocks/charger",
+        "up":  "ecaa:blocks/charger",
+        "east":  "ecaa:blocks/charger",
+        "west":  "ecaa:blocks/charger",
+        "north": "ecaa:blocks/charger",
+        "south":  "ecaa:blocks/charger"
+	}
+}
