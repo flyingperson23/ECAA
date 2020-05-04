@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "ecaa:blocks/extractor_top",
+    "down": "ecaa:blocks/extractor_top",
+    "up": "ecaa:blocks/extractor_top",
+    "east": "ecaa:blocks/extractor_side",
+    "west": "ecaa:blocks/extractor_side",
+    "north": "ecaa:blocks/extractor_side",
+    "south": "ecaa:blocks/extractor_side"
+  }
+}

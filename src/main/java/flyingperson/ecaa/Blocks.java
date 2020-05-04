@@ -5,6 +5,7 @@ import flyingperson.ecaa.block.accelerator.t2.Acceleratort2Block;
 import flyingperson.ecaa.block.accelerator.t3.Acceleratort3Block;
 import flyingperson.ecaa.block.accelerator.t4.Acceleratort4Block;
 import flyingperson.ecaa.block.accelerator.t5.Acceleratort5Block;
+import flyingperson.ecaa.block.extractor.ExtractorBlock;
 import flyingperson.ecaa.block.gravity.t1.GravityBlockt1;
 import flyingperson.ecaa.block.gravity.t2.GravityBlockt2;
 import flyingperson.ecaa.block.gravity.t3.GravityBlockt3;
@@ -57,6 +58,9 @@ public class Blocks {
     @GameRegistry.ObjectHolder("ecaa:neutron")
     public static NeutronBlock neutron;
 
+    @GameRegistry.ObjectHolder("ecaa:extractor")
+    public static ExtractorBlock extractor;
+
     @SideOnly(Side.CLIENT)
     public static void initModels() {
         acceleratort1.initModel();
@@ -74,6 +78,7 @@ public class Blocks {
 
         neutron.initModel();
 
+        extractor.initModel();
     }
 
 }

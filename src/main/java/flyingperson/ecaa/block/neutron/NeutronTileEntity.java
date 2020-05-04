@@ -85,7 +85,6 @@ public class NeutronTileEntity extends NeutronBase2 implements IInventory {
     }
 
     public BlockPos getReactor() {return reactor;}
-
     public void doWork2() {
         if (++progress >= PRODUCTION_TICKS) {
             if (neutrons.isEmpty()) {

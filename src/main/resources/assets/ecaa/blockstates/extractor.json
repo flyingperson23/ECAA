@@ -1,0 +1,15 @@
+{
+
+    "variants": {
+
+        "facing=east": { "model": "ecaa:extractor"},
+
+        "facing=north": { "model": "ecaa:extractor" },
+
+        "facing=south": { "model": "ecaa:extractor"},
+
+        "facing=west": { "model": "ecaa:extractor"}
+
+    }
+
+}

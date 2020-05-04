@@ -1,5 +1,8 @@
 package flyingperson.ecaa.proxy;
 
+import flyingperson.ecaa.block.extractor.ContainerExtractor;
+import flyingperson.ecaa.block.extractor.ExtractorTileEntity;
+import flyingperson.ecaa.block.extractor.GUIExtractor;
 import flyingperson.ecaa.block.neutron.ContainerNeutronCollector;
 import flyingperson.ecaa.block.neutron.GUINeutronCollector;
 import flyingperson.ecaa.block.neutron.NeutronTileEntity;
@@ -17,6 +20,8 @@ public class GuiProxy implements IGuiHandler {
         TileEntity te = world.getTileEntity(pos);
         if (te instanceof NeutronTileEntity) {
             return new ContainerNeutronCollector(player.inventory, (NeutronTileEntity) te);
+        } else if (te instanceof ExtractorTileEntity) {
+            return new ContainerExtractor(player.inventory, (ExtractorTileEntity) te);
         }
         return null;
     }
@@ -28,6 +33,9 @@ public class GuiProxy implements IGuiHandler {
         if (te instanceof NeutronTileEntity) {
             NeutronTileEntity containerTileEntity = (NeutronTileEntity) te;
             return new GUINeutronCollector(player.inventory, containerTileEntity);
+        } else if (te instanceof ExtractorTileEntity) {
+            ExtractorTileEntity extractorTileEntity = (ExtractorTileEntity) te;
+            return new GUIExtractor(player.inventory, extractorTileEntity);
         }
         return null;
     }

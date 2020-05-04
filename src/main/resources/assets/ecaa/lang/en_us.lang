@@ -14,3 +14,10 @@ tile.gravityt4.name=Artificial Gravity Module Tier 4
 tile.gravityt5.name=Artificial Gravity Module Tier 5
 
 tile.neutron.name=Neutron absorber
+
+tile.extractor.name=Dust Collector
+
+item.dustmoon.name=Moon Dust
+item.dustmars.name=Mars dust
+item.dustvenus.name=Venus Dust
+item.dustasteroid.name=Asteroid Dust

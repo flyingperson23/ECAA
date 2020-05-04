@@ -12,6 +12,8 @@ import flyingperson.ecaa.block.accelerator.t4.Acceleratort4Block;
 import flyingperson.ecaa.block.accelerator.t4.Acceleratort4TileEntity;
 import flyingperson.ecaa.block.accelerator.t5.Acceleratort5Block;
 import flyingperson.ecaa.block.accelerator.t5.Acceleratort5TileEntity;
+import flyingperson.ecaa.block.extractor.ExtractorBlock;
+import flyingperson.ecaa.block.extractor.ExtractorTileEntity;
 import flyingperson.ecaa.block.gravity.t1.GravityBlockt1;
 import flyingperson.ecaa.block.gravity.t1.GravityTEt1;
 import flyingperson.ecaa.block.gravity.t2.GravityBlockt2;
@@ -23,6 +25,10 @@ import flyingperson.ecaa.block.gravity.t4.GravityTEt4;
 import flyingperson.ecaa.block.gravity.t5.GravityBlockt5;
 import flyingperson.ecaa.block.gravity.t5.GravityTEt5;
 import flyingperson.ecaa.block.neutron.NeutronInit;
+import flyingperson.ecaa.item.DustAsteroid;
+import flyingperson.ecaa.item.DustMars;
+import flyingperson.ecaa.item.DustMoon;
+import flyingperson.ecaa.item.DustVenus;
 import flyingperson.ecaa.top.TOPCompatibility;
 import flyingperson.ecaa.wireless.WirelessCharger;
 import flyingperson.ecaa.wireless.WirelessChargerTileEntity;
@@ -90,6 +96,10 @@ public class CommonProxy {
         event.getRegistry().register(new GravityBlockt5());
         GameRegistry.registerTileEntity(GravityTEt5.class, "gravityt5");
 
+        event.getRegistry().register(new ExtractorBlock());
+        GameRegistry.registerTileEntity(ExtractorTileEntity.class, "extractor");
+
+
     }
 
     @SubscribeEvent
@@ -115,6 +125,13 @@ public class CommonProxy {
         event.getRegistry().register(new ItemBlock(Blocks.gravityt4).setRegistryName(Blocks.gravityt4.getRegistryName()));
 
         event.getRegistry().register(new ItemBlock(Blocks.gravityt5).setRegistryName(Blocks.gravityt5.getRegistryName()));
+
+        event.getRegistry().register(new ItemBlock(Blocks.extractor).setRegistryName(Blocks.extractor.getRegistryName()));
+
+        event.getRegistry().register(new DustAsteroid());
+        event.getRegistry().register(new DustMars());
+        event.getRegistry().register(new DustMoon());
+        event.getRegistry().register(new DustVenus());
 
     }
 }
