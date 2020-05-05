@@ -1,8 +1,7 @@
 package flyingperson.ecaa.proxy;
 
-import flyingperson.ecaa.ECAA;
 import flyingperson.ecaa.Blocks;
-import flyingperson.ecaa.block.BasicBlock;
+import flyingperson.ecaa.ECAA;
 import flyingperson.ecaa.block.accelerator.t1.Acceleratort1Block;
 import flyingperson.ecaa.block.accelerator.t1.Acceleratort1TileEntity;
 import flyingperson.ecaa.block.accelerator.t2.Acceleratort2Block;
@@ -44,6 +43,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock;
 
 @Mod.EventBusSubscriber
 public class CommonProxy {
@@ -98,8 +98,6 @@ public class CommonProxy {
 
         event.getRegistry().register(new ExtractorBlock());
         GameRegistry.registerTileEntity(ExtractorTileEntity.class, "extractor");
-
-        event.getRegistry().register(new BasicBlock());
         
     }
 
@@ -127,8 +125,6 @@ public class CommonProxy {
 
         event.getRegistry().register(new ItemBlock(Blocks.gravityt5).setRegistryName(Blocks.gravityt5.getRegistryName()));
         
-        event.getRegistry().register(new ItemBlock(Blocks.testblock).setRegistryName(Blocks.testblock.getRegistryName()));
-
         event.getRegistry().register(new ItemBlock(Blocks.extractor).setRegistryName(Blocks.extractor.getRegistryName()));
 
         event.getRegistry().register(new DustAsteroid());

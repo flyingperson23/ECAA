@@ -1,6 +1,5 @@
 package flyingperson.ecaa.worldgen;
 
-import net.minecraft.util.math.BlockPos;
 import java.util.List;
 import java.util.Random;
 
@@ -8,7 +7,15 @@ import micdoodle8.mods.galacticraft.api.vector.BlockVec3;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.MapGenDungeon;
 import micdoodle8.mods.galacticraft.planets.asteroids.dimension.WorldProviderAsteroids;
+import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseConfiguration;
+import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseDeck;
+import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseHangar;
+import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseLinking;
+import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BasePlate;
+import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseRoom;
+import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseStart;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkPrimer;
