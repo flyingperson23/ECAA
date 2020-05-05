@@ -1,6 +1,8 @@
 package flyingperson.ecaa.block.neutron;
 
 
+import javax.annotation.Nullable;
+
 import codechicken.lib.packet.PacketCustom;
 import codechicken.lib.util.BlockUtils;
 import codechicken.lib.util.ItemUtils;
@@ -20,8 +22,6 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fluids.BlockFluidBase;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
-
-import javax.annotation.Nullable;
 
 public class NeutronTileEntity extends NeutronBase2 implements IInventory {
 

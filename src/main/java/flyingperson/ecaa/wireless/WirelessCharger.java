@@ -1,6 +1,5 @@
 package flyingperson.ecaa.wireless;
 
-import flyingperson.ecaa.top.TOPInfoProvider;
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.ProbeMode;
@@ -23,6 +22,9 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
+
+import flyingperson.ecaa.compat.top.TOPInfoProvider;
+
 import java.util.List;
 
 public class WirelessCharger extends Block implements ITileEntityProvider, TOPInfoProvider {

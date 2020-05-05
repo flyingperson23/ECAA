@@ -2,7 +2,7 @@ package flyingperson.ecaa.block.neutron;
 
 import codechicken.lib.util.ItemUtils;
 import flyingperson.ecaa.ECAA;
-import flyingperson.ecaa.top.TOPInfoProvider;
+import flyingperson.ecaa.compat.top.TOPInfoProvider;
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.ProbeMode;

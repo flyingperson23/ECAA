@@ -1,14 +1,13 @@
 package flyingperson.ecaa.block.neutron;
 
+import java.awt.Point;
+
 import morph.avaritia.container.ContainerMachineBase;
 import morph.avaritia.container.slot.OutputSlot;
-import morph.avaritia.tile.TileNeutronCollector;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-
-import java.awt.*;
 
 public class ContainerNeutronCollector extends ContainerMachineBase<NeutronTileEntity> {
 

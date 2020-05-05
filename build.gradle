@@ -13,28 +13,39 @@ buildscript {
 
     }
 }
+
+plugins {
+    id "com.wynprice.cursemaven" version "2.1.1"
+}
+
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
+String GCBuild = "261"
+String GCVersion = "1.12.2-4.0.2.${GCBuild}"
+
 repositories {
+    ivy {
+        url "https://ci.micdoodle8.com/job/"
+        layout 'pattern', {
+            artifact "[organization]/${GCBuild}/artifact/Forge/build/libs/[module]-[revision].jar"
+        }
+        metadataSources { 
+            artifact()
+        }
+    }
     jcenter()
     maven {
         url = "http://maven.blamejared.com"
     }
     maven {
-        url = "http://dvs1.progwml6.com/files/maven"
-    }
-    maven {
-        url = "http://tehnut.info/maven"
+       url = "http://dvs1.progwml6.com/files/maven"
     }
     maven {
         url = "http://maven.covers1624.net/"
     }
     maven {
         url = "https://minecraft.curseforge.com/api/maven/"
-    }
-    maven {
-        url = "https://modmaven.k-4u.nl/" 
     }
 }
 
@@ -64,34 +75,20 @@ minecraft {
 }
 
 dependencies {
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-      
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
-
-    // the 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
-    //provided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // the deobf configurations:  'deobfCompile' and 'deobfProvided' are the same as the normal compile and provided,
-    // except that these dependencies get remapped to your current MCP mappings
-    //deobfCompile 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-    //deobfProvided 'com.mod-buildcraft:buildcraft:6.0.8:dev'
-
-    // for more info...
-    // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
-    // http://www.gradle.org/docs/current/userguide/dependency_management.html
+    compile "Galacticraft-1.12-dev:GalacticraftCore-Dev:${GCVersion}"
+    compile "Galacticraft-1.12-dev:Galacticraft-API:${GCVersion}"
+    compile "Galacticraft-1.12-dev:Galacticraft-Planets-Dev:${GCVersion}"
+    compile "Galacticraft-1.12-dev:MicdoodleCore-Dev:${GCVersion}"
+    
     deobfCompile "cofh:RedstoneFlux:1.12-2.1.0.6:universal"
 	
 	
-	deobfCompile("morph.avaritia:Avaritia:1.12.2-3.2.0.25:universal") {
-        transitive = false
-    }
+	compile "morph.avaritia:Avaritia:1.12.2-3.2.0.25:deobf"
 	
-	
+    compile "mezz.jei:jei_1.12.2:4.15.0.291:api"
+    runtime "mezz.jei:jei_1.12.2:4.15.0.291"
+
+
 }
 
 processResources {
