@@ -1,9 +1,12 @@
 package flyingperson.ecaa.block.extractor;
 
+import java.util.List;
+
+import javax.annotation.Nullable;
+
 import codechicken.lib.util.ItemUtils;
 import flyingperson.ecaa.ECAA;
-import flyingperson.ecaa.block.accelerator.AcceleratorTileEntity;
-import flyingperson.ecaa.top.TOPInfoProvider;
+import flyingperson.ecaa.compat.top.TOPInfoProvider;
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.ProbeMode;
@@ -32,9 +35,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import javax.annotation.Nullable;
-import java.util.List;
 
 public class ExtractorBlock extends BlockContainer implements TOPInfoProvider {
 

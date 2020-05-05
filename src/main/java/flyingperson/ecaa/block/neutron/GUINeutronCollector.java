@@ -2,7 +2,6 @@ package flyingperson.ecaa.block.neutron;
 
 import codechicken.lib.math.MathHelper;
 import morph.avaritia.client.gui.GuiMachineBase;
-import morph.avaritia.tile.TileNeutronCollector;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
