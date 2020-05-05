@@ -2,6 +2,7 @@ package flyingperson.ecaa;
 
 import org.apache.logging.log4j.Logger;
 
+import flyingperson.ecaa.block.gravity.ZeroGEvent;
 import flyingperson.ecaa.proxy.CommonProxy;
 import flyingperson.ecaa.worldgen.BiomeEcaaAsteroids;
 import flyingperson.ecaa.worldgen.ChunkProviderEcaaAsteroids;
@@ -14,9 +15,8 @@ import micdoodle8.mods.galacticraft.core.Constants;
 import micdoodle8.mods.galacticraft.planets.asteroids.AsteroidsModule;
 import micdoodle8.mods.galacticraft.planets.asteroids.ConfigManagerAsteroids;
 import micdoodle8.mods.galacticraft.planets.asteroids.dimension.TeleportTypeAsteroids;
-import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.BiomeAsteroids;
-import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.ChunkProviderAsteroids;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -46,7 +46,8 @@ public class ECAA {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		logger = event.getModLog();
-		GCAsteroids.registerData();
+		Asteroids.registerData();
+        MinecraftForge.EVENT_BUS.register(new ZeroGEvent());
 		proxy.preInit(event);
 	}
 

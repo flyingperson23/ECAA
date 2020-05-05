@@ -27,6 +27,17 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.TreeMap;
 
+/**
+ * This class is from Galacticraft Planets and modified to allow 
+ * customization of asteroid blocks used for worldgen
+ * 
+ * 
+ * all credit for the original class go to the Galacticraft developement team
+ * 
+ * Modified by: ROMVoid95
+ * Created: 5/4/2020
+ *
+ */
 public class WorldProviderEcaaAsteroids extends WorldProviderSpace implements ISolarLevel {
 	private HashSet<AsteroidData> asteroids = new HashSet<>();
 	private boolean dataNotLoaded = true;

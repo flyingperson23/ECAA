@@ -43,12 +43,20 @@ import net.minecraft.world.gen.feature.WorldGenLakes;
 import net.minecraft.world.gen.feature.WorldGenTallGrass;
 import net.minecraft.world.gen.feature.WorldGenTrees;
 
-public class ChunkProviderEcaaAsteroids extends ChunkProviderBase {
 
-//	final Block ASTEROID_STONE = AsteroidBlocks.blockBasic;
-//	final byte ASTEROID_STONE_META_0 = 0;
-//	final byte ASTEROID_STONE_META_1 = 1;
-//	final byte ASTEROID_STONE_META_2 = 2;
+
+/**
+ * This class is from Galacticraft Planets and modified to allow 
+ * customization of asteroid blocks used for worldgen
+ * 
+ * 
+ * all credit for the original class go to the Galacticraft developement team
+ * 
+ * Modified by: ROMVoid95
+ * Created: 5/4/2020
+ *
+ */
+public class ChunkProviderEcaaAsteroids extends ChunkProviderBase {
 
 	final Block DIRT = Blocks.DIRT;
 	final byte DIRT_META = 0;
@@ -557,7 +565,8 @@ public class ChunkProviderEcaaAsteroids extends ChunkProviderBase {
 					int pz = z + this.rand.nextInt(ChunkProviderEcaaAsteroids.CHUNK_SIZE_Z);
 					
 					if (asteroidBlocks.contains(AsteroidBlocks.blockBasic)) {
-						int meta;
+						block = AsteroidBlocks.blockBasic;
+						int meta = 1;
 	                    if (this.rand.nextInt(ILMENITE_CHANCE) == 0)
 	                    {
 	                    	meta = 4;
@@ -588,11 +597,15 @@ public class ChunkProviderEcaaAsteroids extends ChunkProviderBase {
 	                        	asteroidBlocks.add(AsteroidBlocks.blockBasic.getStateFromMeta(meta).getBlock());
 	                            continue;
 	                        }
+	                        
 	                    }
-					}
-					block = ChunkProviderEcaaAsteroids.getRandomElement(asteroidBlocks);
+						world.setBlockState(new BlockPos(px, y, pz), block.getStateFromMeta(meta), 2);
 
-					world.setBlockState(new BlockPos(px, y, pz), block.getDefaultState(), 2);
+					} else {
+						block = ChunkProviderEcaaAsteroids.getRandomElement(asteroidBlocks);
+						world.setBlockState(new BlockPos(px, y, pz), block.getDefaultState(), 2);
+					}
+
 					int count = 9;
 					if (!(world.getBlockState(new BlockPos(px - 1, y, pz)).getBlock() instanceof BlockAir)) {
 						count = 1;

@@ -1,20 +1,14 @@
 package flyingperson.ecaa.worldgen;
 
+import net.minecraft.util.math.BlockPos;
 import java.util.List;
 import java.util.Random;
 
 import micdoodle8.mods.galacticraft.api.vector.BlockVec3;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.MapGenDungeon;
-import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseConfiguration;
-import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseDeck;
-import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseHangar;
-import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseLinking;
-import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BasePlate;
-import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseRoom;
-import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseStart;
+import micdoodle8.mods.galacticraft.planets.asteroids.dimension.WorldProviderAsteroids;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkPrimer;
@@ -77,7 +71,7 @@ public class MapGenAbandonedBase extends MapGenStructure
     protected boolean canSpawnStructureAtCoords(int chunkX, int chunkZ)
     {
         long dungeonPos = MapGenDungeon.getDungeonPosForCoords(this.world, chunkX, chunkZ, ((IGalacticraftWorldProvider) this.world.provider).getDungeonSpacing());
-        int i = (int) (dungeonPos >> 16);
+        int i = (int) (dungeonPos >> 32);
         int j = (int) dungeonPos;
         return i == chunkX && j == chunkZ;
     }
@@ -111,10 +105,10 @@ public class MapGenAbandonedBase extends MapGenStructure
     @Override
     protected StructureStart getStructureStart(int chunkX, int chunkZ)
     {
-        BlockVec3 asteroid = ((WorldProviderEcaaAsteroids) this.world.provider).getClosestAsteroidXZ((chunkX << 2) + 8, 0, (chunkZ << 2) + 8, false);
+        BlockVec3 asteroid = ((WorldProviderAsteroids) this.world.provider).getClosestAsteroidXZ((chunkX << 4) + 8, 0, (chunkZ << 4) + 8, false);
         if (asteroid == null)
         {
-            return new MapGenAbandonedBase.Start(this.world, this.rand, (chunkX << 2) + 8, (chunkZ << 2) + 8, 15, new BaseConfiguration(155, this.rand));
+            return new MapGenAbandonedBase.Start(this.world, this.rand, (chunkX << 4) + 8, (chunkZ << 4) + 8, 15, new BaseConfiguration(148, this.rand));
         }
         return new MapGenAbandonedBase.Start(this.world, this.rand, asteroid.x, asteroid.z, asteroid.sideDoneBits - 5, new BaseConfiguration(asteroid.y - 10, this.rand));
     }
@@ -129,7 +123,7 @@ public class MapGenAbandonedBase extends MapGenStructure
 
         public Start(World worldIn, Random rand, int posX, int posZ, int size, BaseConfiguration configuration)
         {
-            super(posX >> 2, posZ >> 2);
+            super(posX >> 4, posZ >> 4);
             this.configuration = configuration;
             if (size < 1) size = 1;
             size = size * (int) MathHelper.sqrt(size) / 4;
