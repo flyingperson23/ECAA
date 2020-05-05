@@ -6,7 +6,6 @@ import java.util.Random;
 import micdoodle8.mods.galacticraft.api.vector.BlockVec3;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
 import micdoodle8.mods.galacticraft.core.world.gen.dungeon.MapGenDungeon;
-import micdoodle8.mods.galacticraft.planets.asteroids.dimension.WorldProviderAsteroids;
 import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseConfiguration;
 import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseDeck;
 import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.base.BaseHangar;

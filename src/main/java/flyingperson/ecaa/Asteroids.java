@@ -1,31 +1,37 @@
 package flyingperson.ecaa;
 
 import flyingperson.ecaa.worldgen.ChunkProviderEcaaAsteroids;
+import gtc_expansion.GTCXBlocks;
+import gtc_expansion.block.GTCXBlockOre;
+import gtclassic.common.GTBlocks;
+import ic2.core.block.resources.BlockMetal;
+import ic2.core.platform.registry.Ic2States;
 import micdoodle8.mods.galacticraft.core.GCBlocks;
 import micdoodle8.mods.galacticraft.core.util.ConfigManagerCore;
 import micdoodle8.mods.galacticraft.planets.asteroids.ConfigManagerAsteroids;
 import micdoodle8.mods.galacticraft.planets.asteroids.blocks.AsteroidBlocks;
 import micdoodle8.mods.galacticraft.planets.asteroids.world.gen.SpecialAsteroidBlock;
+import micdoodle8.mods.galacticraft.planets.venus.VenusBlocks;
+import micdoodle8.mods.galacticraft.planets.venus.blocks.BlockBasicVenus;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
+import net.minecraftforge.oredict.OreDictionary;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Asteroids {
-
-	// SET TO TRY TO LOAD THE TESTING METHOD
-	private static final boolean doTest = false;
 
 	/**
 	 * Method called in Init stage of mod class
 	 * 
 	 */
 	public static void registerData() {
-		if (doTest) {
-			initTest();
-		} else {
-			initCore();
-			initShell();
-			initOtherBlocks();
-		}
+		initCore();
+		initShell();
+		initOtherBlocks();
 	}
 
 	/**
@@ -39,32 +45,55 @@ public class Asteroids {
 	private static void initCore() {
 
 		// asteroid_rock_0
-		addCore(newSpecialAsteroidBlock(AsteroidBlocks.blockBasic, 2, 5, .3));
+		addCore(newSpecialAsteroidBlock(AsteroidBlocks.blockBasic, 2, 2, .3));
 
 		// asteroid_rock_1
-		addCore(newSpecialAsteroidBlock(AsteroidBlocks.blockBasic, 1, 7, .3));
+		addCore(newSpecialAsteroidBlock(AsteroidBlocks.blockBasic, 1, 1, .3));
 
 		// asteroid_rock_2
-		addCore(newSpecialAsteroidBlock(AsteroidBlocks.blockBasic, 0, 11, .25));
+		addCore(newSpecialAsteroidBlock(AsteroidBlocks.blockBasic, 0, 2, .25));
 
-		// Remove both lines if these are to be removed
-		if (!ConfigManagerAsteroids.disableAluminumGen)
-			addCore(newSpecialAsteroidBlock(AsteroidBlocks.blockBasic, 3, 5, .2));
+		//Aluminum
+		addCore(newSpecialAsteroidBlock(AsteroidBlocks.blockBasic, 3, 5, .2));
 
-		if (!ConfigManagerAsteroids.disableIlmeniteGen)
-			addCore(newSpecialAsteroidBlock(AsteroidBlocks.blockBasic, 4, 4, .15));
+		//Ilmenite
+		addCore(newSpecialAsteroidBlock(AsteroidBlocks.blockBasic, 4, 4, .15));
 
-		if (!ConfigManagerAsteroids.disableIronGen)
-			addCore(newSpecialAsteroidBlock(AsteroidBlocks.blockBasic, 5, 3, .2));
+		//Iron
+		addCore(newSpecialAsteroidBlock(AsteroidBlocks.blockBasic, 5, 3, .2));
 
-		if (ConfigManagerCore.enableSiliconOreGen)
-			addCore(newSpecialAsteroidBlock(GCBlocks.basicBlock, 8, 2, .15));
+		//Copper
+		addCore(newSpecialAsteroidBlockMetaless(Ic2States.copperOre.getBlock(), 4, .2));
 
-		// Solid Meteoric Iron - has no config to disable
+		//Tin
+		addCore(newSpecialAsteroidBlock(Ic2States.tinOre.getBlock(), 1, 4, .2));
+
+		//Lead
+		addCore(newSpecialAsteroidBlock(VenusBlocks.venusBlock,8, 4, .2));
+
+		//Silver
+		addCore(newSpecialAsteroidBlock(Ic2States.silverOre.getBlock(), 3, 4, .2));
+
+		//Uranium
+		addCore(newSpecialAsteroidBlock(Ic2States.uraniumOre.getBlock(), 2,4, .2));
+
+		//Silicon
+		addCore(newSpecialAsteroidBlock(GCBlocks.basicBlock, 8, 2, .15));
+
+		// Solid Meteoric Iron
 		addCore(newSpecialAsteroidBlock(GCBlocks.basicBlock, 12, 2, .13));
 
-		// Diamond ore - has no config to disable
+		// Diamond ore
 		addCore(newSpecialAsteroidBlock(Blocks.DIAMOND_ORE, 0, 1, .1));
+
+		//Iridium ore
+		addCore(newSpecialAsteroidBlockMetaless(GTBlocks.oreIridium, 1, .1));
+
+		//Ruby
+		addCore(newSpecialAsteroidBlockMetaless(GTBlocks.oreRuby, 4, .2));
+
+		//Olivine
+		addCore(newSpecialAsteroidBlockMetaless(GTCXBlocks.oreOlivine, 4, .2));
 
 	}
 
@@ -109,21 +138,8 @@ public class Asteroids {
 	 *
 	 * @param asteroidBlock the asteroid block
 	 */
-	private static void initTest() {
 
-		// ADD TEST CORE BLOCKS
-		addCore(newSpecialAsteroidBlockMetaless(Blocks.BOOKSHELF, 15, .15));
-		addCore(newSpecialAsteroidBlockMetaless(Blocks.DIAMOND_BLOCK, 20, .15));
-		addCore(newSpecialAsteroidBlockMetaless(Blocks.DIRT, 20, .15));
-		addCore(newSpecialAsteroidBlock(Blocks.BEDROCK, 0, 20, .15));
-		// ADD TEST SHELL BLOCKS
-		addShell(newSpecialAsteroidBlockMetaless(Blocks.STONEBRICK, 15, .15));
-		addShell(newSpecialAsteroidBlock(Blocks.COBBLESTONE, 0, 20, .15));
-		// ADD TEST ASTEROID BLOCKS
-		asteroidBlocks(Blocks.REDSTONE_BLOCK);
-		asteroidBlocks(Blocks.IRON_BLOCK);
-		asteroidBlocks(Blocks.EMERALD_BLOCK);
-	}
+
 
 	/**
 	 * Easy setter method for building a new special asteroid block without the need
@@ -148,7 +164,6 @@ public class Asteroids {
 	 * meta, method returns 0 by default
 	 *
 	 * @param block       to use
-	 * @param meta        data for block
 	 * @param probability chances this block is used in worldgen
 	 * @param thickness   expressed as a double (ex: .15 or .30)
 	 * @return new SpecialAsteroidBlock

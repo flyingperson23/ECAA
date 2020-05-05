@@ -52,7 +52,7 @@ repositories {
 
 
 
-version = "1.0.3"
+version = "1.0.4"
 group = "flyingperson.ecaa" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "ecaa"
 
