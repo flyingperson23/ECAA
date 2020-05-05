@@ -1,7 +1,8 @@
 package flyingperson.ecaa.proxy;
 
-import flyingperson.ecaa.Blocks;
 import flyingperson.ecaa.ECAA;
+import flyingperson.ecaa.ModBlocks;
+import flyingperson.ecaa.block.BasicBlock;
 import flyingperson.ecaa.block.accelerator.t1.Acceleratort1Block;
 import flyingperson.ecaa.block.accelerator.t1.Acceleratort1TileEntity;
 import flyingperson.ecaa.block.accelerator.t2.Acceleratort2Block;
@@ -24,11 +25,14 @@ import flyingperson.ecaa.block.gravity.t4.GravityBlockt4;
 import flyingperson.ecaa.block.gravity.t4.GravityTEt4;
 import flyingperson.ecaa.block.gravity.t5.GravityBlockt5;
 import flyingperson.ecaa.block.gravity.t5.GravityTEt5;
+<<<<<<< Updated upstream
 import flyingperson.ecaa.block.neutron.NeutronInit;
 import flyingperson.ecaa.item.DustAsteroid;
 import flyingperson.ecaa.item.DustMars;
 import flyingperson.ecaa.item.DustMoon;
 import flyingperson.ecaa.item.DustVenus;
+=======
+>>>>>>> Stashed changes
 import flyingperson.ecaa.top.TOPCompatibility;
 import flyingperson.ecaa.wireless.WirelessCharger;
 import flyingperson.ecaa.wireless.WirelessChargerTileEntity;
@@ -51,7 +55,7 @@ public class CommonProxy {
         if (Loader.isModLoaded("theoneprobe")) {
             TOPCompatibility.register();
         }
-        NeutronInit.init();
+        //NeutronInit.init();
     }
 
     public void init(FMLInitializationEvent e) {
@@ -95,36 +99,44 @@ public class CommonProxy {
 
         event.getRegistry().register(new GravityBlockt5());
         GameRegistry.registerTileEntity(GravityTEt5.class, "gravityt5");
+<<<<<<< Updated upstream
 
         event.getRegistry().register(new ExtractorBlock());
         GameRegistry.registerTileEntity(ExtractorTileEntity.class, "extractor");
 
 
+=======
+        
+        event.getRegistry().register(new BasicBlock());
+        
+>>>>>>> Stashed changes
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
-        event.getRegistry().register(new ItemBlock(Blocks.acceleratort1).setRegistryName(Blocks.acceleratort1.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.acceleratort1).setRegistryName(ModBlocks.acceleratort1.getRegistryName()));
 
-        event.getRegistry().register(new ItemBlock(Blocks.acceleratort2).setRegistryName(Blocks.acceleratort2.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.acceleratort2).setRegistryName(ModBlocks.acceleratort2.getRegistryName()));
 
-        event.getRegistry().register(new ItemBlock(Blocks.acceleratort3).setRegistryName(Blocks.acceleratort3.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.acceleratort3).setRegistryName(ModBlocks.acceleratort3.getRegistryName()));
 
-        event.getRegistry().register(new ItemBlock(Blocks.acceleratort4).setRegistryName(Blocks.acceleratort4.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.acceleratort4).setRegistryName(ModBlocks.acceleratort4.getRegistryName()));
 
-        event.getRegistry().register(new ItemBlock(Blocks.acceleratort5).setRegistryName(Blocks.acceleratort5.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.acceleratort5).setRegistryName(ModBlocks.acceleratort5.getRegistryName()));
 
-        event.getRegistry().register(new ItemBlock(Blocks.charger).setRegistryName(Blocks.charger.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.charger).setRegistryName(ModBlocks.charger.getRegistryName()));
 
-        event.getRegistry().register(new ItemBlock(Blocks.gravityt1).setRegistryName(Blocks.gravityt1.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.gravityt1).setRegistryName(ModBlocks.gravityt1.getRegistryName()));
 
-        event.getRegistry().register(new ItemBlock(Blocks.gravityt2).setRegistryName(Blocks.gravityt2.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.gravityt2).setRegistryName(ModBlocks.gravityt2.getRegistryName()));
 
-        event.getRegistry().register(new ItemBlock(Blocks.gravityt3).setRegistryName(Blocks.gravityt3.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.gravityt3).setRegistryName(ModBlocks.gravityt3.getRegistryName()));
 
-        event.getRegistry().register(new ItemBlock(Blocks.gravityt4).setRegistryName(Blocks.gravityt4.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.gravityt4).setRegistryName(ModBlocks.gravityt4.getRegistryName()));
 
-        event.getRegistry().register(new ItemBlock(Blocks.gravityt5).setRegistryName(Blocks.gravityt5.getRegistryName()));
+        event.getRegistry().register(new ItemBlock(ModBlocks.gravityt5).setRegistryName(ModBlocks.gravityt5.getRegistryName()));
+        
+        event.getRegistry().register(new ItemBlock(ModBlocks.testblock).setRegistryName(ModBlocks.testblock.getRegistryName()));
 
         event.getRegistry().register(new ItemBlock(Blocks.extractor).setRegistryName(Blocks.extractor.getRegistryName()));
 
