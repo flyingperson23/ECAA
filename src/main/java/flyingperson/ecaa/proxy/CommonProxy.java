@@ -24,6 +24,7 @@ import flyingperson.ecaa.block.gravity.t4.GravityBlockt4;
 import flyingperson.ecaa.block.gravity.t4.GravityTEt4;
 import flyingperson.ecaa.block.gravity.t5.GravityBlockt5;
 import flyingperson.ecaa.block.gravity.t5.GravityTEt5;
+import flyingperson.ecaa.block.neutron.NeutronInit;
 import flyingperson.ecaa.compat.top.TOPCompatibility;
 import flyingperson.ecaa.item.DustAsteroid;
 import flyingperson.ecaa.item.DustMars;
@@ -43,7 +44,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import scala.tools.nsc.backend.icode.BasicBlocks.BasicBlock;
 
 @Mod.EventBusSubscriber
 public class CommonProxy {
@@ -51,7 +51,7 @@ public class CommonProxy {
         if (Loader.isModLoaded("theoneprobe")) {
             TOPCompatibility.register();
         }
-        //NeutronInit.init();
+        NeutronInit.init();
     }
 
     public void init(FMLInitializationEvent e) {

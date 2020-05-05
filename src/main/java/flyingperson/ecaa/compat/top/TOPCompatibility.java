@@ -17,7 +17,7 @@ public class TOPCompatibility {
         if (registered)
             return;
         registered = true;
-        FMLInterModComms.sendFunctionMessage("theoneprobe", "getTheOneProbe", "flyingperson.ecaa.top.TOPCompatibility$GetTheOneProbe");
+        FMLInterModComms.sendFunctionMessage("theoneprobe", "getTheOneProbe", "flyingperson.ecaa.compat.top.TOPCompatibility$GetTheOneProbe");
     }
 
 

@@ -7,16 +7,24 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 
 import java.util.function.Consumer;
 
 public class NeutronInit {
+    @GameRegistry.ObjectHolder("ecaa:neutron")
     public static NeutronBlock neutron;
     public static void init() {
         neutron = registerBlock(new NeutronBlock());
         registerItemBlock(neutron);
         GameRegistry.registerTileEntity(NeutronTileEntity.class, "neutron");
+    }
+
+    @SideOnly(Side.CLIENT)
+    public static void initModel() {
+        neutron.initModel();
     }
 
     public static <V extends Block> V registerBlock(V block) {

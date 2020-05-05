@@ -55,9 +55,6 @@ public class Blocks {
     @GameRegistry.ObjectHolder("ecaa:gravityt5")
     public static GravityBlockt5 gravityt5;
 
-    @GameRegistry.ObjectHolder("ecaa:neutron")
-    public static NeutronBlock neutron;
-
     @GameRegistry.ObjectHolder("ecaa:extractor")
     public static ExtractorBlock extractor;
 
@@ -75,8 +72,6 @@ public class Blocks {
         gravityt3.initModel();
         gravityt4.initModel();
         gravityt5.initModel();
-
-        neutron.initModel();
 
         extractor.initModel();
     }

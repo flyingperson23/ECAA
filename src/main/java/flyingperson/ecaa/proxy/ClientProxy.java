@@ -3,6 +3,7 @@ package flyingperson.ecaa.proxy;
 import flyingperson.ecaa.ECAA;
 import flyingperson.ecaa.Items;
 import flyingperson.ecaa.Blocks;
+import flyingperson.ecaa.block.neutron.NeutronInit;
 import flyingperson.ecaa.handler.SkyProviderHandler;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.obj.OBJLoader;
@@ -34,14 +35,14 @@ public class ClientProxy extends CommonProxy {
 	@Override
 	public void postInit(FMLPostInitializationEvent e) {
 		super.postInit(e);
-		Blocks.initModels();
+		//Blocks.initModels();
 	}
 
 	@SubscribeEvent
 	public static void registerModels(ModelRegistryEvent event) {
 		Blocks.initModels();
 		Items.initModels();
-		Blocks.initModels();
+		NeutronInit.initModel();
 	}
 
 }
