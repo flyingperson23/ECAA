@@ -1,4 +1,4 @@
-package flyingperson.ecaa.jei;
+package flyingperson.ecaa.compat.jei;
 
 import flyingperson.ecaa.block.extractor.ExtractorTileEntity;
 import mezz.jei.api.ingredients.IIngredients;

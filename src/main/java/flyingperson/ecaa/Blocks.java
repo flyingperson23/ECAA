@@ -1,6 +1,5 @@
 package flyingperson.ecaa;
 
-import flyingperson.ecaa.block.BasicBlock;
 import flyingperson.ecaa.block.accelerator.t1.Acceleratort1Block;
 import flyingperson.ecaa.block.accelerator.t2.Acceleratort2Block;
 import flyingperson.ecaa.block.accelerator.t3.Acceleratort3Block;
@@ -18,7 +17,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ModBlocks {
+public class Blocks {
 
 
 
@@ -58,9 +57,6 @@ public class ModBlocks {
 
     @GameRegistry.ObjectHolder("ecaa:neutron")
     public static NeutronBlock neutron;
-    
-    @GameRegistry.ObjectHolder("ecaa:testblock")
-    public static BasicBlock testblock;
 
     @GameRegistry.ObjectHolder("ecaa:extractor")
     public static ExtractorBlock extractor;
@@ -80,9 +76,7 @@ public class ModBlocks {
         gravityt4.initModel();
         gravityt5.initModel();
 
-        //neutron.initModel();
-        
-        testblock.initModel();
+        neutron.initModel();
 
         extractor.initModel();
     }

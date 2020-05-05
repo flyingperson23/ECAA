@@ -1,4 +1,4 @@
-package flyingperson.ecaa.jei;
+package flyingperson.ecaa.compat.jei;
 
 import flyingperson.ecaa.ECAA;
 import mezz.jei.api.IGuiHelper;

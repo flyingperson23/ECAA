@@ -1,4 +1,4 @@
-package flyingperson.ecaa.top;
+package flyingperson.ecaa.compat.top;
 
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
