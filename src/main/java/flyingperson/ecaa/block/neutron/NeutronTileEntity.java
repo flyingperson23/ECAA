@@ -253,10 +253,4 @@ public class NeutronTileEntity extends NeutronBase2 implements IInventory {
     @Override
     public void clear() {
     }
-
-	@Override
-	public void update() {
-		// TODO Auto-generated method stub
-		
-	}
 }
