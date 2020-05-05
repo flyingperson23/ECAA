@@ -7,9 +7,11 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import micdoodle8.mods.galacticraft.api.entity.IAntiGrav;
+import micdoodle8.mods.galacticraft.api.event.ZeroGravityEvent;
 import micdoodle8.mods.galacticraft.api.item.IArmorGravity;
 import micdoodle8.mods.galacticraft.api.vector.BlockVec3Dim;
 import micdoodle8.mods.galacticraft.api.world.IGalacticraftWorldProvider;
+import micdoodle8.mods.galacticraft.api.world.IZeroGDimension;
 import micdoodle8.mods.galacticraft.core.dimension.WorldProviderSpaceStation;
 import micdoodle8.mods.miccore.Annotations.NetworkedField;
 import net.minecraft.entity.Entity;
@@ -125,7 +127,7 @@ public abstract class TileEntityGravity extends TileEntity implements ITickable 
 
         if (this.world.provider instanceof IGalacticraftWorldProvider) {
             final double g;
-            if (this.world.provider instanceof WorldProviderSpaceStation)
+            if (this.world.provider instanceof IZeroGDimension)
                 g = 0.80665D;
             else
                 g = (1.0 - ((IGalacticraftWorldProvider) world.provider).getGravity()) / 0.08F;
