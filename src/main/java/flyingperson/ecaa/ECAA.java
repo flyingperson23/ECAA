@@ -26,15 +26,16 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 @Mod(modid = ECAA.MODID, name = ECAA.NAME, version = ECAA.VERSION, acceptedMinecraftVersions = ECAA.MCVERSION, dependencies = ECAA.DEPENDENCIES_FORGE
-		+ ECAA.DEPENDENCIES_MODS)
+		+ ECAA.DEPENDENCIES_MODS+ ECAA.LOAD_AFTER)
 public class ECAA {
 	public static final String MODID = "ecaa";
 	public static final String NAME = "Ex Cinere Adscendere Addons";
-	public static final String VERSION = "1.0";
+	public static final String VERSION = "1.0.5";
 
 	public static final String MCVERSION = "[1.12.2]";
 	public static final String DEPENDENCIES_FORGE = "required-after:forge@[14.23.5.2847,);";
 	public static final String DEPENDENCIES_MODS = "required-after:galacticraftcore;required-after:galacticraftplanets;";
+	public static final String LOAD_AFTER = "after:gtclassic;after:gtc_expansion;";
 
 	public static Logger logger;
 	@SidedProxy(clientSide = "flyingperson.ecaa.proxy.ClientProxy", serverSide = "flyingperson.ecaa.proxy.ServerProxy")
